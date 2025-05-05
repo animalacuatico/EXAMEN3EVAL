@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public enum ProjectileType { ICEARROW, ARROW, BOOMERANG }
 public class PlayerShoot : MonoBehaviour
 {
     public float timeToShoot = 0.4f;
@@ -16,10 +15,10 @@ public class PlayerShoot : MonoBehaviour
         if (currentTime > timeToShoot && Input.GetMouseButton(0)) 
         {
             Instantiate(projectile, transform.position, Quaternion.identity);
-            Debug.Log(counter);
+            Debug.Log(counter); // Debug del contador.
             currentTime = 0;
         }
-        // Cada vez que se presiona el espacio, se 
+        // Cada vez que se presiona el espacio, se suma uno al contador, por lo tanto da vueltas en un ciclo del 0 al 2.
         if(Input.GetKeyDown(KeyCode.Space))
         {
             counter++;
@@ -28,6 +27,7 @@ public class PlayerShoot : MonoBehaviour
                 counter = 0;
             }
         }
+        // Cada vez que cambia el contador, se cambia el tipo de proyectil al siguiente.
         switch (counter)
         {
             case 0:
