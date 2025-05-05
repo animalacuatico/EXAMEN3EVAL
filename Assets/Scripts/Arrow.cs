@@ -8,10 +8,9 @@ public class Arrow : Projectile
     {
         // Constructor vacío.
     }
-    public Arrow(Sprite arrowSprite)
+    public Arrow(Sprite arrowSprite, Rigidbody2D rb) : base(30, 25, Resources.Load<Sprite>("./Resources/arrow"), rb)
     {
-        this.damage = 25;
-        this.speed = 30;
+        this.rb = rb;
     }
     public override void Move()
     {

@@ -99,9 +99,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1403e61f913ca98438d7a6a33d262dbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileType: 0
   aliveTime: 5
-  shooter: {fileID: 0}
+  typeofProj: 0
+  icearrow: {fileID: 21300000, guid: 650a2d85bb250e94d891ef07a471bd24, type: 3}
+  arrow: {fileID: 21300000, guid: 4183a4e36a8cfc743900ae8df5541922, type: 3}
+  boomerang: {fileID: 21300000, guid: 4ac1b6845b745d045b55b63dfa675a9d, type: 3}
 --- !u!61 &1578634791326028831
 BoxCollider2D:
   m_ObjectHideFlags: 0

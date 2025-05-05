@@ -8,14 +8,14 @@ public class IceArrow : Projectile
     {
 
     }
-    public IceArrow(Sprite iceArrowSprite)
+    public IceArrow(Sprite iceArrowSprite, Rigidbody2D rb) : base (15, 10, Resources.Load<Sprite>("./Resources/IceArrow"), rb)
     {
         this.damage = 10;
         this.speed = 15;
     }
     public override void Move()
     {
-        rb.velocity = new Vector2(0, Mathf.Sin(Time.time) * speed);
+        rb.velocity = new Vector2(Mathf.Sin(Time.time) * speed, speed);
     }
     public override void Hit(GameObject receiver)
     {

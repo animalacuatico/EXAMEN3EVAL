@@ -14,12 +14,12 @@ public abstract class Projectile
 
     }
 
-    public Projectile(float speed, float damage, Rigidbody2D rb, Sprite sprite)
+    public Projectile(float speed, float damage, Sprite sprite, Rigidbody2D rb)
     {
         this.speed = speed;
         this.damage = damage;
-        this.rb = rb;
         this.sprite = sprite;
+        this.rb = rb;
     }
 
     public Sprite GetSprite()
@@ -32,5 +32,4 @@ public abstract class Projectile
     {
         receiver.GetComponent<Enemy>().ReceiveDamage(damage);
     }
-
 }

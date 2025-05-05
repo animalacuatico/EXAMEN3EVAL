@@ -5,25 +5,25 @@ using UnityEngine;
 
 public class Boomerang : Projectile
 {
-    private float timeToReturn, currentTime;
+    private float timeToReturn = 2, currentTime;
 
     public Boomerang()
     {
         // Constructor vacío.
     }
-    public Boomerang(Sprite boomSprite, float timeToReturn, Rigidbody2D rb) : base(10, 8, rb, boomSprite)
+    public Boomerang(Sprite boomSprite, float timeToReturn, Rigidbody2D rb) : base(10, 8, Resources.Load<Sprite>("./Resources/Boomerang"), rb)
     {
         this.timeToReturn = timeToReturn;
-        this.rb = rb;
     }
 
     public override void Move()
     {
-        rb.velocity = Vector2.up * Time.deltaTime;
+        rb.velocity = Vector2.up;
+        currentTime = Time.deltaTime;
         if (currentTime >= timeToReturn)
         {
-            rb.velocity = -rb.velocity * Time.deltaTime;
-            rb.rotation = speed * Time.deltaTime;
+            rb.velocity = Vector2.down;
+            rb.rotation = speed;
         }
     }
 }
